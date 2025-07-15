@@ -1,0 +1,72 @@
+{
+  "test_name": "Test HOGAN",
+  "test_description": "Análisis de personalidad y motivaciones laborales",
+  "questions": [
+    {
+      "id": 0,
+      "question": "¿Tiendes a asumir roles de liderazgo en grupos de trabajo?",
+      "options": [
+        "Sí, naturalmente tomo el control",
+        "No, prefiero que otros lideren",
+        "A veces, depende del grupo y la situación"
+      ],
+      "values": ["si", "no", "aveces"],
+      "category": "leadership"
+    },
+    {
+      "id": 1,
+      "question": "¿Cómo reaccionas emocionalmente ante las críticas?",
+      "options": [
+        "Soy sensible y me afectan bastante",
+        "Las manejo bien y las uso para mejorar",
+        "Depende de quién venga la crítica"
+      ],
+      "values": ["si", "no", "depende"],
+      "category": "emotional_resilience"
+    },
+    {
+      "id": 2,
+      "question": "¿Qué prefieres en tu entorno de trabajo?",
+      "options": [
+        "Estructura clara y procesos definidos",
+        "Flexibilidad para improvisar y adaptarme",
+        "Un balance entre ambos enfoques"
+      ],
+      "values": ["estructura", "improvisacion", "ambos"],
+      "category": "work_structure"
+    },
+    {
+      "id": 3,
+      "question": "¿Te resulta difícil desconectarte del trabajo?",
+      "options": [
+        "Sí, siempre pienso en proyectos pendientes",
+        "No, tengo límites claros entre trabajo y vida personal",
+        "A veces, especialmente en proyectos importantes"
+      ],
+      "values": ["si", "no", "aveces"],
+      "category": "work_life_balance"
+    }
+  ],
+  "scoring_guide": {
+    "leadership": {
+      "name": "Líder",
+      "keywords": ["si", "no", "si"],
+      "description": "Tendencia natural al liderazgo y control"
+    },
+    "resilience": {
+      "name": "Resiliente",
+      "keywords": ["no", "estructura", "no"],
+      "description": "Estabilidad emocional y resistencia al estrés"
+    },
+    "structure": {
+      "name": "Estructurado",
+      "keywords": ["estructura", "no", "si"],
+      "description": "Preferencia por orden y planificación"
+    },
+    "balance": {
+      "name": "Equilibrado",
+      "keywords": ["aveces", "ambos", "no"],
+      "description": "Balance entre trabajo y vida personal"
+    }
+  }
+}

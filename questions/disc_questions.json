@@ -1,0 +1,72 @@
+{
+  "test_name": "Test DISC",
+  "test_description": "Evaluación de estilo de comportamiento y comunicación",
+  "questions": [
+    {
+      "id": 0,
+      "question": "¿Cómo prefieres trabajar en la mayoría de las situaciones?",
+      "options": [
+        "En grupo, colaborando con otros",
+        "Solo, con autonomía total",
+        "Me adapto según la situación"
+      ],
+      "values": ["grupo", "solo", "ambos"],
+      "category": "work_style"
+    },
+    {
+      "id": 1,
+      "question": "Cuando debes tomar una decisión importante, ¿qué haces?",
+      "options": [
+        "Tomo la decisión rápidamente y actúo",
+        "Analizo todas las opciones cuidadosamente",
+        "Depende de la complejidad del tema"
+      ],
+      "values": ["rapido", "analizar", "depende"],
+      "category": "decision_making"
+    },
+    {
+      "id": 2,
+      "question": "¿Qué te motiva más en el trabajo?",
+      "options": [
+        "Lograr mis metas personales y reconocimiento",
+        "Ayudar al equipo a alcanzar objetivos comunes",
+        "Ambos aspectos son igualmente importantes"
+      ],
+      "values": ["logros", "equipo", "ambos"],
+      "category": "motivation"
+    },
+    {
+      "id": 3,
+      "question": "¿Cómo reaccionas ante situaciones de conflicto?",
+      "options": [
+        "Me incomodan y trato de evitarlos",
+        "Los veo como oportunidades de cambio",
+        "Depende del contexto y las personas involucradas"
+      ],
+      "values": ["si", "no", "depende"],
+      "category": "conflict_handling"
+    }
+  ],
+  "scoring_guide": {
+    "D": {
+      "name": "Dominante",
+      "keywords": ["rapido", "logros", "no"],
+      "description": "Orientado a resultados, directo y decidido"
+    },
+    "I": {
+      "name": "Influyente", 
+      "keywords": ["grupo", "equipo", "no"],
+      "description": "Sociable, comunicativo y persuasivo"
+    },
+    "S": {
+      "name": "Estable",
+      "keywords": ["grupo", "equipo", "si", "ambos"],
+      "description": "Confiable, paciente y colaborativo"
+    },
+    "C": {
+      "name": "Analítico",
+      "keywords": ["solo", "analizar", "depende"],
+      "description": "Detallista, preciso y sistemático"
+    }
+  }
+}

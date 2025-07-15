@@ -1,0 +1,16 @@
+{
+  "test_name": "Entrevista Simulada",
+  "test_description": "Simulación de preguntas de entrevista laboral estándar",
+  "questions": [
+    "¿Cuáles son tus principales fortalezas?",
+    "Cuéntame sobre un desafío laboral que hayas superado.",
+    "¿Cómo manejas el trabajo bajo presión?",
+    "¿Qué te motiva profesionalmente?",
+    "Describe una situación donde tuviste que trabajar en equipo para alcanzar un objetivo.",
+    "¿Dónde te ves profesionalmente en 5 años?",
+    "¿Cómo manejas los conflictos con compañeros de trabajo?",
+    "¿Qué harías si no estás de acuerdo con la decisión de tu jefe?",
+    "¿Qué aprendiste de tu último trabajo/práctica?",
+    "¿Qué valoras más en un ambiente de trabajo?"
+  ]
+}
