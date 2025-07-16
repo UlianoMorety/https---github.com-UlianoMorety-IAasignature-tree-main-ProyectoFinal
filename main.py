@@ -94,24 +94,19 @@ class TlabajaBot:
         self.db.insert_user(user.id, user.username or user.first_name)
         
         welcome_message = (
-            f"¡Hola {user.first_name}! 👋\n\n"
-            "Soy **Tlabaja**, tu entrenador personal para entrevistas de trabajo.\n\n"
-            "🎯 **¿Qué haré por ti?**\n"
-            "• Realizaré un test de perfilamiento para conocerte mejor\n"
-            "• Simularé una entrevista de trabajo real\n"
-            "• Te daré retroalimentación personalizada con IA\n\n"
-            "💡 **¿Listo para comenzar?**"
+            f"¡Hola de nuevo {user.first_name}! 👋\n\n"
+            "**¿Listo para intentarlo otra vez? pulsa /start**"
         )
         query = update.callback_query
         await query.answer()
         
-        keyboard = [
-            [InlineKeyboardButton("🚀 ¡Empezar ahora!", callback_data='restart')]
+        """keyboard = [
+            [InlineKeyboardButton("¡Empezar ahora!", callback_data='restart')]
         ]
-        reply_markup = InlineKeyboardMarkup(keyboard)
+        reply_markup = InlineKeyboardMarkup(keyboard)"""
         
-        await query.edit_message_text(welcome_message, reply_markup=reply_markup, parse_mode='Markdown')
-        return START
+        await update.callback_query.edit_message_text(welcome_message, parse_mode='Markdown')
+        return ConversationHandler.END
 
     async def test_select(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         """Selección del tipo de test"""
@@ -367,7 +362,7 @@ class TlabajaBot:
             
             keyboard = [
                 [InlineKeyboardButton("📊 Ver mi historial", callback_data='history')],
-                [InlineKeyboardButton("Pulsa ñ", callback_data='restart')]
+                [InlineKeyboardButton("Volver", callback_data='restart')]
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
             
@@ -422,7 +417,7 @@ class TlabajaBot:
                 message += f"• {record['test_type'].upper()} - {record['date']}\n"
                 message += f"  Perfil: {record['profile']}\n\n"
         
-        keyboard = [[InlineKeyboardButton("🔄 Nuevo test", callback_data='restart')]]
+        keyboard = [[InlineKeyboardButton("Volver", callback_data='restart')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         await update.callback_query.edit_message_text(
@@ -455,7 +450,7 @@ class TlabajaBot:
                 RESTART:[CallbackQueryHandler(self.handle_callback)],
                 CIERRE: [CallbackQueryHandler(self.handle_callback)]
             },
-            fallbacks=[CommandHandler('cancel', self.cancel)]
+            fallbacks=[CommandHandler('start', self.start)]
         )
         
         application.add_handler(conv_handler)
